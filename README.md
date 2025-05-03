@@ -1,4 +1,5 @@
-# Store
+# CursoAngularAvanzado
+Tienda de productos hecho con Angular 19
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
 
