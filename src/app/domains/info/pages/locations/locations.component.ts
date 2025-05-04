@@ -1,6 +1,6 @@
 import { afterNextRender, Component, resource, signal } from '@angular/core';
-//import { environment } from '@env/environment';
-import { environment } from 'src/environments/environment';
+import { environment } from '@env/environment';
+//import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-locations',
