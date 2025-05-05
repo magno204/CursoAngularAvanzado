@@ -5,9 +5,6 @@
 /out-tsc
 /.angular
 
-# Environment files
-/src/environments/*.ts
-
 # IDEs and editors
 /.vscode
 *.suo
