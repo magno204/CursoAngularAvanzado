@@ -1,26 +1,24 @@
 import {
   Component,
   inject,
-  //signal,
-  //OnInit,
   input,
-  //computed,
   linkedSignal,
   effect,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ProductService } from '@shared/services/product.service';
-//import { Product } from '@shared/models/product.model';
 import { CartService } from '@shared/services/cart.service';
-//import { Meta, Title } from '@angular/platform-browser';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { environment } from '@env/environment';
 import { MetaTagsService } from '@shared/services/meta-tags.service';
+import { RelatedComponent } from '@products/components/related/related.component';
 
 @Component({
   selector: 'app-product-detail',
-  imports: [CommonModule, NgOptimizedImage],
+  imports: [CommonModule, NgOptimizedImage, RelatedComponent],
   templateUrl: './product-detail.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class ProductDetailComponent {
   readonly slug = input.required<string>();
@@ -48,6 +46,7 @@ export default class ProductDetailComponent {
   private metaTagsService = inject(MetaTagsService);
 
   constructor() {
+    //console.log('product detail slug => ', this.slug());
     effect(() => {
       const product = this.productRs.value();
       if (product) {

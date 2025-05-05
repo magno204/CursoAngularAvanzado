@@ -1,4 +1,10 @@
-import { afterNextRender, Component, resource, signal } from '@angular/core';
+import {
+  afterNextRender,
+  ChangeDetectionStrategy,
+  Component,
+  resource,
+  signal,
+} from '@angular/core';
 import { environment } from '@env/environment';
 //import { environment } from 'src/environments/environment';
 
@@ -6,6 +12,7 @@ import { environment } from '@env/environment';
   selector: 'app-locations',
   imports: [],
   templateUrl: './locations.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class LocationsComponent {
   $origin = signal('');

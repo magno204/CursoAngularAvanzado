@@ -13,6 +13,7 @@ import {
   //output,
   model,
   afterNextRender,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -20,6 +21,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-counter',
   imports: [CommonModule],
   templateUrl: './counter.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CounterComponent implements OnInit, AfterViewInit, OnDestroy {
   $duration = input.required<number>({ alias: 'duration' });
